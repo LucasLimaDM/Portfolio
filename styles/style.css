@@ -48,31 +48,34 @@ header nav {
   align-items: center;
   gap: 24px;
 }
+header .menu {
+  display: none;
+}
 
 section {
-  min-height: calc(100vh - 70px);
+  min-height: calc(90vh - 70px);
 }
 section h2 {
   text-align: center;
-  padding: 50px 0;
 }
 
-#sobre-mim {
+#apresentacao {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-items: flex-start;
   gap: 0;
+  min-height: calc(100vh - 70px);
 }
-#sobre-mim .info-iniciais {
+#apresentacao .info-iniciais {
   padding-top: 25vh;
 }
-#sobre-mim .info-iniciais h2 {
+#apresentacao .info-iniciais h2 {
   overflow: hidden;
   margin: 0 auto;
   display: inline-block;
 }
-#sobre-mim .info-iniciais h2::after {
+#apresentacao .info-iniciais h2::after {
   content: "";
   display: inline-block;
   background-color: white;
@@ -81,30 +84,31 @@ section h2 {
   width: 2px;
   animation: cursor 0.6s infinite;
 }
-#sobre-mim .info-iniciais p {
+#apresentacao .info-iniciais p {
   margin: 30px 0;
 }
-#sobre-mim .info-iniciais button {
+#apresentacao .info-iniciais button {
   width: 180px;
   height: 40px;
   border-radius: 30px;
   background: linear-gradient(#13131a, #13131a) padding-box, linear-gradient(to right, #a525a5, #2525a5) border-box;
   border: 3px solid transparent;
 }
-#sobre-mim .info-iniciais button:hover {
+#apresentacao .info-iniciais button:hover {
   filter: hue-rotate(360deg);
   transition: 2s;
 }
-#sobre-mim img {
-  padding-top: 12.5vh;
+#apresentacao img {
+  height: 600px;
+  padding-top: 5vh;
 }
 
 #conhecimentos ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: space-around;
-  gap: 10%;
+  align-items: center;
+  gap: 5%;
   height: 100%;
 }
 #conhecimentos ul li {
@@ -115,7 +119,7 @@ section h2 {
   gap: 10px;
   filter: hue-rotate(0deg);
   transition: filter 1s;
-  width: 150px;
+  width: 25%;
   height: 150px;
 }
 #conhecimentos ul li img {
@@ -130,12 +134,46 @@ section h2 {
   transform: rotateY(360deg);
 }
 
+#sobre-mim {
+  text-align: center;
+  padding: 0 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+}
+#sobre-mim .container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0;
+}
+#sobre-mim .container .box-texto {
+  width: 45%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+#sobre-mim .container .box-texto p {
+  max-width: 450px;
+  text-align: justify;
+}
+
+#projetos h2 {
+  padding-bottom: 30px;
+}
 #projetos .container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
   gap: 30px;
+  padding-bottom: 20px;
 }
 #projetos .project-card {
   transition: 1.2s;
@@ -176,11 +214,11 @@ section h2 {
   transition: 1s;
   z-index: -1;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   background: linear-gradient(45deg, #2525a5, #a525a5);
   filter: blur(20px);
-  opacity: 0.8;
+  opacity: 0.7;
   border-radius: inherit;
 }
 #projetos .project-card:hover::after {
@@ -199,28 +237,89 @@ footer {
   background-color: #030303;
   min-height: 250px;
   text-align: center;
-}
-footer h2 {
-  padding: 40px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 0;
 }
 footer ul {
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 0;
+  gap: 14px;
 }
 footer img {
-  height: 70px;
+  height: 50px;
 }
 footer #github {
   background-color: #f9f9f9;
   border-radius: 50px;
 }
 
-@media (min-width: 860px) {
+@media (max-width: 1024px) {
   #conhecimentos ul li {
-    width: 25%;
+    width: 40%;
+  }
+  header {
+    height: 80px;
+  }
+  header nav {
+    display: none;
+  }
+  header .menu {
+    display: flex;
+  }
+}
+@media (max-width: 850px) {
+  #apresentacao {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    padding-top: 130px;
+  }
+  #apresentacao .info-iniciais {
+    padding: 0;
+  }
+}
+@media (max-width: 640px) {
+  #apresentacao {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #apresentacao .info-iniciais {
+    padding: 0;
+  }
+  #apresentacao .info-iniciais button {
+    width: 45%;
+  }
+  #apresentacao img {
+    width: 300px;
+    height: 500px;
+  }
+  #conhecimentos ul li {
+    width: 90%;
+  }
+  #sobre-mim .container {
+    flex-flow: column;
+  }
+  #sobre-mim .container .box-texto {
+    width: 90%;
+    margin: 30px auto;
+  }
+  #sobre-mim .container .box-texto p {
+    width: 100%;
+  }
+  #projetos .project-card a {
+    width: 90%;
+    margin: auto;
+  }
+  #projetos .project-card:hover {
+    transform: scale(1.05);
   }
 }
 @keyframes cursor {
