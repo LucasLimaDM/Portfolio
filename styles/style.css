@@ -143,6 +143,9 @@ section h2 {
   align-items: center;
   gap: 0;
 }
+#sobre-mim h2 {
+  padding-bottom: 30px;
+}
 #sobre-mim .container {
   display: flex;
   flex-flow: row wrap;

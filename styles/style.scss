@@ -150,6 +150,9 @@ section{
     padding: 0 30px;
     @include flexElement(column nowrap, flex-start, center, 0);
 
+    h2{
+        padding-bottom: 30px
+    }
     .container{
         @include flexElement(row wrap, space-between, baseline, 0);
 
