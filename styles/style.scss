@@ -286,7 +286,7 @@ footer{
 @media(max-width:850px){
     #apresentacao{ 
         @include flexElement(column, space-around, center, 40px);
-        padding-top: calc($header-h + 60px);
+        padding-top: 25px;
 
         .info-iniciais{
         padding: 0;
